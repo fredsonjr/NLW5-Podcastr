@@ -1,15 +1,18 @@
 import format from 'date-fns/format';
 import ptBR from 'date-fns/locale/pt-BR';
+import { useContext } from 'react';
+import { PlayerContext } from '../../contexts/PlayerContext';
 
 import styles from './styles.module.scss';
 
 export function Player () {
+    const player = useContext(PlayerContext)
     
     return (
         <div className={styles.playerContainer}>
             <header>
                 <img src="/playing.svg" alt="Tocando agora"/>
-                <strong>Tocando agora</strong>
+                <strong>Tocando agora {player}</strong>
             </header>
 
             <div className={styles.emptyPlayer}>
